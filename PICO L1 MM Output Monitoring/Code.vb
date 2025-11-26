@@ -118,6 +118,20 @@ Module Function_Module
             .lblFC1B.Text = L1B_FuseCount
             .lblTTC1B.Text = L1B_Total_TrayCount
         End With
+
+        FormatLabel(Count_Form.lblTC1A)
+        FormatLabel(Count_Form.lblFC1A)
+        FormatLabel(Count_Form.lblTTC1A)
+        FormatLabel(Count_Form.lblTC1B)
+        FormatLabel(Count_Form.lblFC1B)
+        FormatLabel(Count_Form.lblTTC1B)
+
+    End Sub
+
+    Sub FormatLabel(lbl As Label)
+        If IsNumeric(lbl.Text) Then
+            lbl.Text = Decimal.Parse(lbl.Text).ToString("N0")
+        End If
     End Sub
 
 
